@@ -16,3 +16,24 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+body {
+  background-image: url('./bear.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.homepage {
+  color: white;
+  text-align: center;
+}
+
+.navbar {
+  background-color: black;
+  color: white;
+}
+
+label {
+  color: white;
+
+}
