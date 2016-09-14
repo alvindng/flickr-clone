@@ -1,8 +1,14 @@
-<%= @user.username %>
-<%= link_to "New Image", new_user_image_path(@user) %>
+<div class="jumbotron">
+  <h1><%= @user.username %></h1>
+  <% if @user.id === current_user.id %>
+    <%= button_to "New Image", new_image_path, class: 'btn-primary btn', :method => "get" %>
+  <% end %>
+</div>
 
 <% if @user.images.any? %>
   <% @user.images.each do |image| %>
-    <%= image_tag image.img_file.url(:default) %>
+    <%=link_to image_path(image) do %>
+      <%= image_tag image.img_file.url(:default) %>
+    <% end %>
   <% end %>
 <% end %>
