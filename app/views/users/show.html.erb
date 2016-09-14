@@ -1,0 +1,8 @@
+<%= @user.username %>
+<%= link_to "New Image", new_user_image_path(@user) %>
+
+<% if @user.images.any? %>
+  <% @user.images.each do |image| %>
+    <%= image_tag image.img_file.url(:default) %>
+  <% end %>
+<% end %>
