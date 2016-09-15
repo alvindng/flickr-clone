@@ -21,6 +21,8 @@ body {
   background-image: url('./bear.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
 }
 
 .homepage {
@@ -44,4 +46,9 @@ h1 {
 .image-tile {
   width: 100px;
   height: 100px;
+}
+
+.bumpdown {
+  margin-top: 15px;
+  margin-left: 10px;
 }
