@@ -1,16 +1,13 @@
 <%= image_tag @image.img_file.url %>
 
 <%= render "tags/new" %>
+
 <% if @image.tags.any? %>
   <% @image.tags.each do |tag| %>
-    <h1><%= tag.user_id %></h1>
-    <h1><%= tag.image_id %></h1>
-
+    <%= button_to tag.user.username, image_tag_path(tag.image, tag), class:"btn btn-success", :method =>"delete" %>
   <% end %>
 <% end %>
-<% @image.tagged_users.each do |tagged_user| %>
-  <%= tagged_user.username %>
-<% end %>
+
 
 <% if @image.user_id === current_user.id %>
   <p><%= button_to "delete image", image_path(@image), :method => "delete" %></p>

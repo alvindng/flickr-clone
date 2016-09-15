@@ -23,6 +23,12 @@ class TagsController < ApplicationController
     end
   end
 
+  def destroy
+    @tag = Tag.find(params[:id])
+    @tag.destroy
+    redirect_to image_path(@tag.image)
+  end
+
 private
   def tag_params
     params.require(:tag).permit(:user_id, :image_id)

@@ -12,3 +12,12 @@
     <% end %>
   <% end %>
 <% end %>
+
+<h1>Tagged Images for <%=@user.username%></h1>
+<% if @user.tagged_images.any? %>
+  <% @user.tagged_images.each do |tagged_image| %>
+    <%= link_to image_path(tagged_image) do%>
+      <%= image_tag tagged_image.img_file.url(:default)%>
+    <% end %>
+  <% end %>
+<% end %>
