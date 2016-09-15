@@ -19,7 +19,7 @@ class TagsController < ApplicationController
         redirect_to image_path(@image)
       else
         flash[:alert] = "Tag unsuccessful, please try again!"
-        render :new
+        render :_new
     end
   end
 

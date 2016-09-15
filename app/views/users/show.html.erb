@@ -6,18 +6,18 @@
 </div>
 
 <% if @user.images.any? %>
-  <% @user.images.each do |image| %>
-    <%=link_to image_path(image) do %>
-      <%= image_tag image.img_file.url(:default) %>
+    <% @user.images.each do |image| %>
+      <%=link_to image_path(image) do %>
+        <%= image_tag image.img_file.url(:default), class:"image-tile" %>
+      <% end %>
     <% end %>
-  <% end %>
 <% end %>
 
 <h1>Tagged Images for <%=@user.username%></h1>
 <% if @user.tagged_images.any? %>
   <% @user.tagged_images.each do |tagged_image| %>
     <%= link_to image_path(tagged_image) do%>
-      <%= image_tag tagged_image.img_file.url(:default)%>
+      <%= image_tag tagged_image.img_file.url(:default), class:"image-tile" %>
     <% end %>
   <% end %>
 <% end %>
