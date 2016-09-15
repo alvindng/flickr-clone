@@ -1,0 +1,5 @@
+<%= form_for [@image, @image.tags.new] do |f| %>
+  <%= f.label :tags %>
+  <%= f.collection_select :user_id, User.all, :id, :username, include_blank: true %>
+  <%= f.submit  %>
+<% end %>
